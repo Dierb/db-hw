@@ -40,9 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'movie_app',
+    "rest_framework.authtoken",
+    "cbv"
 
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        "rest_framework.authentication.TokenAuthentication"
+    ],
+    'PAGE_SIZE':3
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
